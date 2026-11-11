@@ -36,15 +36,20 @@
 
 Entramos a lo que es Cisco, y vamos a crear un Router principal que va a estar conectado a 3 Switch donde estos respectivamente estan conectados a 3 PC donde haremos lo que son las 3 subclases
 
+![Imagen 1](IMAGENES/1.png)
 
 Después vamos a configurar del Router, se ingresó a la consola CLI del router para asignar la dirección IP 10.0.0.1 con máscara 255.240.0.0 (/12) a la interfaz GigabitEthernet0/0 como puerta de enlace predeterminada de la subred Clase A. Se habilitó el puerto mediante el comando no shutdown y se confirmó su estado activo (up/up).
 
+![Imagen 2](IMAGENES/2.png)
 
 Despues configuramos las IP de las PC0 y PC1, se asignaron direcciones IP pertenecientes a la primera subred (10.0.0.0/12) a las computadoras PC0 (10.0.0.10) y PC1 (10.0.0.11), utilizando la máscara 255.240.0.0 y la IP 10.0.0.1 como puerta de enlace predeterminada.
 
+![Imagen 3](IMAGENES/3.png)
+![Imagen 4](IMAGENES/4.png)
 
 Por ultimo vamos a confirmar con los Ping de de las respectivas PC de la clase A, se realizaron pruebas de conectividad desde PC0 enviando paquetes ICMP hacia la puerta de enlace (10.0.0.1) y hacia PC1 (10.0.0.11). Todas las pruebas resultaron exitosas con un 0% de pérdida de paquetes.
 
+![Imagen 5](IMAGENES/5.png)
 
 **Subredes Clase B (172.20.0.0/16)**
 
@@ -84,14 +89,16 @@ Por ultimo vamos a confirmar con los Ping de de las respectivas PC de la clase A
 
 De la misma manera vamos a configurar lo que es el router principal, se ingresó a la consola CLI del router para asignar la dirección IP 172.20.0.1 con máscara 255.255.248.0 (/21) a la interfaz GigabitEthernet0/1 como puerta de enlace predeterminada de la subred Clase B. Se habilitó la interfaz mediante el comando no shutdown y se verificó su estado activo (up/up).
 
-
+![Imagen 6](IMAGENES/6.png)
 
 De igual forma, configuramos lo que es la IP de cada computadora, se configuraron las direcciones IP fijas en las computadoras pertenecientes a la primera subred Clase B (172.20.0.0/21): PC2 con IP 172.20.0.10 y PC3 con IP 172.20.0.11, estableciendo la máscara de subred 255.255.248.0 y el gateway 172.20.0.1.
 
-
+![Imagen 7](IMAGENES/7.png)
+![Imagen 8](IMAGENES/8.png)
 
 Por ultimo nuevamente vamos a probar los Ping, se verificó la conectividad de la subred Clase B desde PC2 realizando pruebas de ping exitosas hacia la puerta de enlace (172.20.0.1) y hacia el host adyacente PC3 (172.20.0.11) sin pérdida de paquetes.
 
+![Imagen 9](IMAGENES/9.png)
 
 **Subredes Clase C (192.168.50.0/24)**
 
@@ -120,10 +127,13 @@ Por ultimo nuevamente vamos a probar los Ping, se verificó la conectividad de l
 
 De la misma manera vamos a configurar lo que es el router principal, se ingresó a la consola CLI del router para asignar la dirección IP 192.168.50.1 con máscara 255.255.255.224 (/27) a la interfaz GigabitEthernet0/2 como puerta de enlace predeterminada de la subred Clase C. Se habilitó el puerto mediante el comando no shutdown y se confirmó su estado activo (up/up).
 
+![Imagen 10](IMAGENES/10.png)
 
 De la misma manera vamos a configurar las respectivas IP, se asignaron direcciones IP estáticas pertenecientes a la primera subred (192.168.50.0/27) a los equipos PC4 (192.168.50.10) y PC5 (192.168.50.11), definiendo la máscara de subred 255.255.255.224 y el gateway 192.168.50.1.
 
-
+![Imagen 11](IMAGENES/11.png)
+![Imagen 12](IMAGENES/12.png)
 
 Por ultimo vamos a probar con los ping respectivos, se realizaron las pruebas de conectividad ICMP desde PC4 respondiendo exitosamente la puerta de enlace (192.168.50.1) y el equipo adyacente PC5 (192.168.50.11) con un 0% de pérdida de paquetes.
 
+![Imagen 13](IMAGENES/13.png)
